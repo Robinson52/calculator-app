@@ -1,3 +1,10 @@
+const toggleSci = document.getElementById("toggleSci");
+const calc = document.querySelector(".calc");
+
+toggleSci.addEventListener("click", () => {
+  calc.classList.toggle("scientific");
+});
+
 const screen = document.getElementById("screen");
 const historyEl = document.getElementById("history");
 const keys = document.querySelector(".keys");
@@ -10,6 +17,35 @@ let justEvaluated = false;
 function update() {
   screen.value = current;
   historyEl.textContent = prev !== null && op ? `${prev} ${prettyOp(op)}` : "";
+}
+function applyFunction(fn) {
+  let x = Number(current);
+  if (!Number.isFinite(x)) return;
+
+  let result;
+  switch (fn) {
+    case "sqrt":
+      result = Math.sqrt(x);
+      break;
+    case "pow2":
+      result = x * x;
+      break;
+    case "sin":
+      result = Math.sin(x);
+      break;
+    case "cos":
+      result = Math.cos(x);
+      break;
+    case "tan":
+      result = Math.tan(x);
+      break;
+  }
+
+  current = String(
+    Math.round((result + Number.EPSILON) * 1e12) / 1e12
+  );
+  justEvaluated = true;
+  update();
 }
 
 function prettyOp(o) {
