@@ -4,26 +4,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Calculator</title>
+
   <link rel="stylesheet" href="style.css" />
 
-   <!-- PWA additions -->
+  <!-- PWA additions -->
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#0f172a" />
 </head>
+
 <body>
-  <<button id="toggleSci" class="key wide">Scientific</button>
+  <main class="calc">
+    <!-- Scientific toggle -->
+    <button id="toggleSci" class="key wide">Scientific</button>
+
+    <!-- Display -->
     <div class="display" aria-label="Calculator display">
       <div id="history" class="history"></div>
       <input id="screen" class="screen" value="0" readonly />
     </div>
 
+    <!-- Keys -->
     <div class="keys">
+      <!-- Scientific buttons -->
       <button data-fn="sqrt" class="key sci">√</button>
-<button data-fn="pow2" class="key sci">x²</button>
-<button data-fn="sin" class="key sci">sin</button>
-<button data-fn="cos" class="key sci">cos</button>
-<button data-fn="tan" class="key sci">tan</button>
+      <button data-fn="pow2" class="key sci">x²</button>
+      <button data-fn="sin" class="key sci">sin</button>
+      <button data-fn="cos" class="key sci">cos</button>
+      <button data-fn="tan" class="key sci">tan</button>
 
+      <!-- Normal buttons -->
       <button data-action="clear" class="key wide">AC</button>
       <button data-action="delete" class="key">DEL</button>
       <button data-op="/" class="key op">÷</button>
@@ -50,6 +59,7 @@
     </div>
   </main>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
   <script src="pwa.js"></script>
 </body>
