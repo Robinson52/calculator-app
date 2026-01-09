@@ -22,6 +22,11 @@ function applyFunction(fn) {
   let x = Number(current);
   if (!Number.isFinite(x)) return;
 
+  if (btn.dataset.fn) {
+  return applyFunction(btn.dataset.fn);
+}
+
+
   let result;
   switch (fn) {
     case "sqrt":
