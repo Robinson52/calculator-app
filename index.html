@@ -11,13 +11,19 @@
   <meta name="theme-color" content="#0f172a" />
 </head>
 <body>
-  <main class="calc">
+  <<button id="toggleSci" class="key wide">Scientific</button>
     <div class="display" aria-label="Calculator display">
       <div id="history" class="history"></div>
       <input id="screen" class="screen" value="0" readonly />
     </div>
 
     <div class="keys">
+      <button data-fn="sqrt" class="key sci">√</button>
+<button data-fn="pow2" class="key sci">x²</button>
+<button data-fn="sin" class="key sci">sin</button>
+<button data-fn="cos" class="key sci">cos</button>
+<button data-fn="tan" class="key sci">tan</button>
+
       <button data-action="clear" class="key wide">AC</button>
       <button data-action="delete" class="key">DEL</button>
       <button data-op="/" class="key op">÷</button>
